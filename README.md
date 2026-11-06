@@ -10,7 +10,7 @@
   <div class="app-container">
     <header>
       <h1>Meu App de Treino</h1>
-      <p>Gerencie seus exercícios diários</p>
+      <p>Gerencie séries, cargas e repetições</p>
     </header>
 
     <div class="form-container">
@@ -19,8 +19,17 @@
         <option value="Treino B">Treino B (Costas / Bíceps)</option>
         <option value="Treino C">Treino C (Pernas / Ombros)</option>
       </select>
-      <input type="text" id="exercicio-nome" placeholder="Nome do exercício">
-      <input type="text" id="exercicio-series" placeholder="Séries x Reps (ex: 4x10)">
+      
+      <input type="text" id="exercicio-nome" placeholder="Nome do exercício (ex: Supino Reto)">
+      
+      <div class="input-group">
+        <input type="number" id="exercicio-series" placeholder="Séries (ex: 4)" min="1">
+        <input type="text" id="exercicio-reps" placeholder="Reps (ex: 10-12)">
+        <input type="number" id="exercicio-carga" placeholder="Carga (kg)" step="0.5">
+      </div>
+
+      <input type="text" id="exercicio-obs" placeholder="Observações/Descanso (opcional)">
+
       <button onclick="adicionarExercicio()">Adicionar Exercício</button>
     </div>
 
