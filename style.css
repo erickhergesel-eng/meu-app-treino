@@ -1,0 +1,418 @@
+/* ==========================================================================
+   Variáveis de Cores e Estilos Básicos (Design System)
+   ========================================================================== */
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-input: #0f172a;
+  --border-color: #334155;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  
+  --color-success: #10b981;
+  --color-success-hover: #059669;
+  
+  --color-danger: #ef4444;
+  --color-danger-hover: #dc2626;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  --transition-fast: 0.2s ease;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   Header App
+   ========================================================================== */
+.app-header {
+  padding: 8px 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  background-color: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+}
+
+.app-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Cards e Seções
+   ========================================================================== */
+.card-section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-title h2, 
+.section-title h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Formulários e Inputs
+   ========================================================================== */
+.form-inline {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 8px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+input, select {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+input:focus, select:focus {
+  border-color: var(--color-primary);
+}
+
+/* Botões Customizados */
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform 0.1s active;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.btn-primary:hover { background-color: var(--color-primary-hover); }
+
+.btn-success {
+  background-color: var(--color-success);
+  color: #0f172a;
+}
+.btn-success:hover { background-color: var(--color-success-hover); }
+
+.btn-danger-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  font-size: 12px;
+  padding: 6px 12px;
+}
+.btn-danger-outline:hover {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+
+.full-width { width: 100%; }
+
+/* ==========================================================================
+   Abas Roláveis de Pessoas / Atletas
+   ========================================================================== */
+.abas-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.aba-pessoa {
+  background-color: var(--bg-input);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.aba-pessoa.active {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Perfil Ativo e Treinos
+   ========================================================================== */
+.area-treinos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perfil-header-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+.perfil-header-card h2 {
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+/* Abas de Treino A, B, C, D */
+.abas-treino {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.tab-treino {
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.tab-treino.active {
+  background-color: var(--color-success);
+  color: #0f172a;
+  border-color: var(--color-success);
+}
+
+/* ==========================================================================
+   Lista de Exercícios
+   ========================================================================== */
+.lista-exercicios {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-exercicio {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+}
+
+.item-exercicio.concluido {
+  opacity: 0.45;
+  border-left-color: var(--border-color);
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.item-exercicio.concluido .ex-title {
+  text-decoration: line-through;
+}
+
+.ex-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ex-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ex-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--color-success);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.ex-obs {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.ex-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.check-concluido {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--color-success);
+  cursor: pointer;
+}
+
+.btn-del-ex {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.btn-del-ex:hover {
+  color: var(--color-danger);
+}
+
+/* ==========================================================================
+   Estados Vazios e Utilitários
+   ========================================================================== */
+.hidden { display: none !important; }
+
+.estado-vazio-card {
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.vazio-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.estado-vazio-card h3 {
+  color: var(--text-primary);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.estado-vazio-card p {
+  font-size: 13px;
+  max-width: 380px;
+  margin: 0 auto;
+}
